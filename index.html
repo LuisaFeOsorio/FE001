@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosé & Bloom — Boutique Floral (Plan Básico)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              300: '#fda4af',
+              400: '#fb7185',
+              500: '#f43f5e',
+              600: '#e11d48',
+              700: '#be123c',
+              800: '#9f1239',
+              900: '#881337',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-padding-top: 6.5rem; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAFAFB;
+      color: #1F2937;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(244, 63, 94, 0.12);
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px -10px rgba(244, 63, 94, 0.18);
+      border-color: rgba(244, 63, 94, 0.3);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #e11d48 0%, #fda4af 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Oculta la barra de scroll del menú móvil */
+    .no-scrollbar { scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-rose-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
+    <!-- Brand Logo -->
+    <a href="#inicio" class="flex items-center gap-2 sm:gap-3 group min-w-0">
+      <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full bg-gradient-to-tr from-rose-500 to-rose-300 flex items-center justify-center text-white shadow-md shadow-rose-200 group-hover:scale-105 transition-transform">
+        <i class="fa-solid fa-spa text-sm sm:text-lg"></i>
+      </div>
+      <div class="min-w-0">
+        <span class="font-serif-title font-bold text-base sm:text-2xl text-gray-900 tracking-tight block leading-none whitespace-nowrap">ROSÉ <span class="text-rose-500">&</span> BLOOM</span>
+        <span class="hidden sm:block text-[10px] tracking-widest text-rose-400 font-semibold uppercase">Boutique Floral Essential</span>
+      </div>
+    </a>
+
+    <!-- Desktop Links -->
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+      <a href="#inicio" class="hover:text-rose-500 transition-colors">Inicio</a>
+      <a href="#nosotros" class="hover:text-rose-500 transition-colors">Quiénes Somos</a>
+      <a href="#trabajo" class="hover:text-rose-500 transition-colors">Nuestro Trabajo</a>
+      <a href="#contacto" class="hover:text-rose-500 transition-colors">Contacto & Redes</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <div class="flex items-center gap-3 shrink-0">
+      <a href="https://wa.me/573017687272" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-rose-500 hover:bg-rose-600 text-white font-medium text-xs sm:text-sm shadow-md shadow-rose-200 transition-all hover:shadow-lg">
+        <i class="fa-brands fa-whatsapp mr-1"></i> Contactar
+      </a>
+    </div>
+  </div>
+
+  <!-- Menú móvil (visible solo en celular) -->
+  <nav class="md:hidden border-t border-rose-50 overflow-x-auto no-scrollbar">
+    <div class="flex items-center justify-around gap-5 px-4 h-9 text-xs font-medium text-gray-600 whitespace-nowrap">
+      <a href="#inicio" class="hover:text-rose-500">Inicio</a>
+      <a href="#nosotros" class="hover:text-rose-500">Quiénes Somos</a>
+      <a href="#trabajo" class="hover:text-rose-500">Nuestro Trabajo</a>
+      <a href="#contacto" class="hover:text-rose-500">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<section id="inicio" class="relative pt-28 pb-10 sm:pt-32 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-rose-50/80 via-white to-transparent">
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
+    <!-- Siempre 2 columnas: texto a la izquierda, imagen a la derecha (también en celular) -->
+    <div class="grid grid-cols-12 gap-3 sm:gap-8 lg:gap-12 items-center">
+
+      <!-- Hero Left Content -->
+      <div class="col-span-7 space-y-2.5 sm:space-y-6 text-left">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-rose-100 text-rose-600 text-[8px] sm:text-xs font-semibold uppercase tracking-wider sm:tracking-widest shadow-sm">
+          <i class="fa-solid fa-heart"></i> Diseños Florales Únicos
+        </div>
+
+        <h1 class="text-[22px] leading-[1.15] sm:text-5xl lg:text-6xl font-serif-title font-bold text-gray-900 sm:leading-tight">
+          Flores Frescas que
+          <span class="text-gradient">Expresan tus Emociones</span>
+        </h1>
+
+        <p class="text-gray-600 text-[11px] leading-snug sm:text-lg sm:leading-relaxed max-w-xl font-normal">
+          Arreglos florales artesanales elaborados con flores seleccionadas día a día. Elegancia, frescura y momentos memorables directo a tu puerta.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 pt-1 sm:pt-2">
+          <a href="#trabajo" class="px-4 py-2 sm:px-8 sm:py-3.5 rounded-full bg-rose-500 hover:bg-rose-600 text-white font-semibold text-center text-[11px] sm:text-base shadow-md shadow-rose-200 transition-all">
+            Ver Galería
+          </a>
+          <a href="https://wa.me/573017687272" target="_blank" rel="noopener noreferrer" class="px-4 py-2 sm:px-8 sm:py-3.5 rounded-full bg-white hover:bg-rose-50 text-gray-800 font-semibold border border-rose-200 text-center text-[11px] sm:text-base shadow-sm transition-all">
+            Pedir por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Right Image -->
+      <div class="col-span-5 flex justify-center">
+        <div class="relative w-full max-w-md">
+          <div class="absolute -inset-2 sm:-inset-4 bg-rose-200/50 rounded-2xl sm:rounded-3xl filter blur-lg sm:blur-xl"></div>
+          <div class="glass-card rounded-2xl sm:rounded-3xl p-1.5 sm:p-3 shadow-xl relative z-10 border border-white">
+            <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80" alt="Bouquet de Flores Frescas" class="w-full h-56 sm:h-96 object-cover rounded-xl sm:rounded-2xl">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="py-12 sm:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-card rounded-3xl p-5 sm:p-12 border border-rose-100 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-center">
+
+        <!-- Team / Founder Image -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden shadow-md">
+            <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80" alt="Nuestro Equipo Florista" class="w-full h-64 sm:h-80 lg:h-[400px] object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-gray-900/80 to-transparent p-4 text-white text-center">
+              <h4 class="font-serif-title text-lg font-bold">Camila Valenzuela & Equipo</h4>
+              <p class="text-xs text-rose-200">Floristas Principales</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Description -->
+        <div class="lg:col-span-7 space-y-4">
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-rose-500 bg-rose-100 px-3 py-1 rounded-full">Quiénes Somos</span>
+          <h2 class="text-2xl sm:text-4xl font-serif-title font-bold text-gray-900">
+            Pasión por los Detalles y el <span class="text-gradient">Arte Botánico</span>
+          </h2>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+            En <strong>Rosé & Bloom</strong> seleccionamos cuidadosamente cada flor en su punto ideal de apertura. Creemos que regalar flores es transmitir un mensaje de afecto, agradecimiento y belleza.
+          </p>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+            Nuestro equipo combina creatividad moderna con la frescura tradicional para ofrecerte ramos únicos, delicados y listos para cualquier celebración o sorpresa especial.
+          </p>
+          <div class="pt-2 flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold text-rose-600">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check-circle"></i> Flores 100% Frescas</span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check-circle"></i> Envíos Puntuales</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trabajo" class="py-12 sm:py-20 bg-rose-50/40">
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-3">
+      <span class="inline-block text-xs font-bold uppercase tracking-widest text-rose-500 bg-rose-100 px-3 py-1 rounded-full">Galería</span>
+      <h2 class="text-2xl sm:text-4xl font-serif-title font-bold text-gray-900">
+        Nuestro <span class="text-gradient">Trabajo</span>
+      </h2>
+      <p class="text-gray-600 text-sm sm:text-base">
+        Una muestra de algunas de nuestras composiciones florales más solicitadas.
+      </p>
+    </div>
+
+    <!-- 4 imágenes: 2 por fila en celular, 4 en escritorio -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+      <!-- Image 1 -->
+      <div class="glass-card glass-card-hover rounded-xl sm:rounded-2xl overflow-hidden shadow-sm group">
+        <div class="h-40 sm:h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Arreglo para Bodas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-2.5 sm:p-4 text-center">
+          <h3 class="font-serif-title font-bold text-gray-900 text-sm sm:text-base leading-tight">Arreglos para Eventos</h3>
+          <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Elegancia y sofisticación</p>
+        </div>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="glass-card glass-card-hover rounded-xl sm:rounded-2xl overflow-hidden shadow-sm group">
+        <div class="h-40 sm:h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80" alt="Bouquets de Regalo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-2.5 sm:p-4 text-center">
+          <h3 class="font-serif-title font-bold text-gray-900 text-sm sm:text-base leading-tight">Bouquets de Regalo</h3>
+          <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Ramos con toque personalizado</p>
+        </div>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="glass-card glass-card-hover rounded-xl sm:rounded-2xl overflow-hidden shadow-sm group">
+        <div class="h-40 sm:h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=80" alt="Flores Preservadas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-2.5 sm:p-4 text-center">
+          <h3 class="font-serif-title font-bold text-gray-900 text-sm sm:text-base leading-tight">Flores Preservadas</h3>
+          <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Belleza de larga duración</p>
+        </div>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="glass-card glass-card-hover rounded-xl sm:rounded-2xl overflow-hidden shadow-sm group">
+        <div class="h-40 sm:h-64 overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=700&q=80" alt="Orquídeas y Detalle Botánico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-2.5 sm:p-4 text-center">
+          <h3 class="font-serif-title font-bold text-gray-900 text-sm sm:text-base leading-tight">Orquídeas Selección</h3>
+          <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Plantas exóticas y macetas finas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="py-12 sm:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
+
+      <!-- Left: Contact Details & Location -->
+      <div class="lg:col-span-6 glass-card rounded-3xl p-5 sm:p-8 space-y-6 border border-rose-100 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 shrink-0 rounded-xl bg-rose-500 text-white flex items-center justify-center text-lg">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h3 class="font-serif-title font-bold text-xl sm:text-2xl text-gray-900">Ubicación & Contacto</h3>
+              <p class="text-xs text-rose-500 font-semibold">Atelier & Boutique Floral</p>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-sm text-gray-600">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-map-pin text-rose-500 mt-1"></i>
+              <div>
+                <p class="font-bold text-gray-900">Dirección</p>
+                <p class="text-xs text-gray-500">Cra. 14 #15-02 Norte, Armenia, Quindío</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-clock text-rose-500 mt-1"></i>
+              <div>
+                <p class="font-bold text-gray-900">Horario de Atención</p>
+                <p class="text-xs text-gray-500">Lun - Sáb: 8:00 AM – 7:00 PM</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-phone text-rose-500 mt-1"></i>
+              <div>
+                <p class="font-bold text-gray-900">Teléfonos</p>
+                <p class="text-xs text-gray-500">+57 301 768 7272 / +57 (6) 745 0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 sm:pt-6">
+          <a href="https://maps.google.com/?cid=463967057623681869" target="_blank" rel="noopener noreferrer" class="w-full block py-3 rounded-xl bg-gray-900 hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider text-center transition-all">
+            <i class="fa-solid fa-map text-rose-400 mr-2"></i> Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Social Networks -->
+      <div class="lg:col-span-6 glass-card rounded-3xl p-5 sm:p-8 space-y-6 border border-rose-100 shadow-sm flex flex-col justify-between bg-gradient-to-br from-rose-50/50 to-white">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 shrink-0 rounded-xl bg-rose-500 text-white flex items-center justify-center text-lg">
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            <div>
+              <h3 class="font-serif-title font-bold text-xl sm:text-2xl text-gray-900">Nuestras Redes</h3>
+              <p class="text-xs text-rose-500 font-semibold">Conecta con Nosotros</p>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-6">
+            Síguenos en nuestras plataformas para descubrir los arreglos diarios, nuevas flores de temporada y promociones exclusivas.
+          </p>
+
+          <!-- Social Buttons Grid: 2 por fila también en celular -->
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <a href="#" class="p-3 sm:p-4 rounded-2xl bg-white border border-rose-100 hover:border-rose-300 flex items-center gap-2.5 sm:gap-3 transition-all hover:shadow-sm group min-w-0">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="font-bold text-xs text-gray-900">Instagram</p>
+                <p class="text-[10px] text-gray-400 truncate">@roseandbloom.co</p>
+              </div>
+            </a>
+
+            <a href="#" class="p-3 sm:p-4 rounded-2xl bg-white border border-rose-100 hover:border-rose-300 flex items-center gap-2.5 sm:gap-3 transition-all hover:shadow-sm group min-w-0">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="font-bold text-xs text-gray-900">WhatsApp</p>
+                <p class="text-[10px] text-gray-400 truncate">Atención Inmediata</p>
+              </div>
+            </a>
+
+            <a href="#" class="p-3 sm:p-4 rounded-2xl bg-white border border-rose-100 hover:border-rose-300 flex items-center gap-2.5 sm:gap-3 transition-all hover:shadow-sm group min-w-0">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="font-bold text-xs text-gray-900">Pinterest</p>
+                <p class="text-[10px] text-gray-400 truncate">Catálogo de Ideas</p>
+              </div>
+            </a>
+
+            <a href="#" class="p-3 sm:p-4 rounded-2xl bg-white border border-rose-100 hover:border-rose-300 flex items-center gap-2.5 sm:gap-3 transition-all hover:shadow-sm group min-w-0">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="font-bold text-xs text-gray-900">Facebook</p>
+                <p class="text-[10px] text-gray-400 truncate">Rosé & Bloom Boutique</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white py-8 sm:py-10 border-t border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400 text-center">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 rounded-full bg-rose-500 flex items-center justify-center text-white text-xs">
+        <i class="fa-solid fa-spa"></i>
+      </div>
+      <span class="font-serif-title font-bold text-white text-sm">ROSÉ & BLOOM</span>
+    </div>
+    <p>© 2026 Rosé & Bloom Essential. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
